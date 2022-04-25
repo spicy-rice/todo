@@ -1,4 +1,4 @@
-* {
+/* * {
   background-color: #fefbf3;
 }
 
@@ -19,13 +19,18 @@ h1 {
 
 .task-container {
   text-align: center;
-  max-width: 400px;
+  /* max-width: 400px; */
+/* width: max-content;
   margin: 40px auto;
   margin-right: 40px;
   flex-direction: row;
   display: flex;
   border-color: #ce97b0;
   border-style: double;
+} */
+
+/* .task-container:hover {
+  background-color: #84b9b9;
 }
 
 .input-todo {
@@ -68,4 +73,4 @@ li {
 .input-w-button {
   border-color: #ce97b0;
   border-style: double;
-}
+} */

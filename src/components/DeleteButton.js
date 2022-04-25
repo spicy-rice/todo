@@ -4,7 +4,7 @@ function DeleteButton({ handleRemoveTask, id }) {
   return (
     <button
       className="delete-button"
-      key={id}
+      id={id}
       type="button"
       onClick={() => handleRemoveTask(id)}
     >
