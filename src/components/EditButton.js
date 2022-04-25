@@ -1,10 +1,9 @@
-function EditButton({ handleEditTask, id }) {
+function EditButton({ setIsEditing }) {
   return (
     <button
       className="edit-button"
-      id={id}
       type="button"
-      onClick={() => handleEditTask(id)}
+      onClick={() => setIsEditing(true)}
     >
       Edit
     </button>

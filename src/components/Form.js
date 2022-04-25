@@ -2,11 +2,13 @@ import { useRef, useState } from "react";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 import Input from "./Input";
+import EditInput from "./EditInput";
 
 function Form() {
   // const [newTask, setNewTask] = useState("");
   const inputRef = useRef("");
   const [tasks, setTasks] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
 
   function handleAddTask() {
     const task = {
@@ -25,20 +27,37 @@ function Form() {
   }
 
   function handleEditTask(id) {
-    console.log("Edit button works");
+    const findIndex = tasks.find((task) => task.id === id);
+    return tasks[findIndex].title;
+    //edit task by index, but need to add this to array and update it
   }
+
+  // function handleEditTask(id) {
+  //   // setIsEditing(true);
+  //   console.log(isEditing);
+  // }
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
       <div className="input-w-button">
         <Input inputRef={inputRef} handleAddTask={handleAddTask} />
       </div>
+
       <ul className="all-tasks-list">
         {tasks.map((task) => (
           <div key={task.id} className="task-container">
             <li className="tasks-listed">{task.title}</li>
             <DeleteButton id={task.id} handleRemoveTask={handleRemoveTask} />
-            <EditButton id={task.id} handleEditTask={handleEditTask} />
+            <EditButton setIsEditing={setIsEditing} />
+            {isEditing ? (
+              <EditInput
+                inputRef={inputRef}
+                handleEditTask={handleEditTask}
+                id={task.id}
+              />
+            ) : (
+              console.log("isEditing is false")
+            )}
           </div>
         ))}
       </ul>

@@ -7,7 +7,7 @@ function Input({ inputRef, handleAddTask }) {
         ref={inputRef}
         className="input-todo"
         type="text"
-        placeholder="todo"
+        placeholder="Create a new todo"
         // onChange={(e) => setNewTask(e.target.value)}
         // value={inputRef.current.value}
       />

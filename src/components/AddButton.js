@@ -5,7 +5,7 @@ function AddButton({ handleAddTask }) {
     <button
       className="add-button"
       type="button"
-      onClick={(e) => handleAddTask(e)}
+      onClick={() => handleAddTask()}
     >
       +
     </button>
